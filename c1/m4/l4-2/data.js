@@ -1,4 +1,5 @@
 /* Course 1 · Module 4 · Lecture 4.2: Use Metaphors
+   Activity 1 cards: drawn by Claude in the style of the M4 deck (slide 6).
    Source: Course I Ungraded Assessments doc. */
 window.LECTURE = {
   id: "c1/m4/l4-2",
@@ -6,6 +7,7 @@ window.LECTURE = {
     {
       title: "Activity 1: Find the connection",
       meta: "Optional · Two dropdowns",
+      figure: "<figure><div class=\"sc-cards\"><img src=\"../../../assets/img/c1-l4-2-cell-membrane.svg\" width=\"240\" height=\"280\" alt=\"Card labeled Cell membrane: a double row of membrane molecules with a channel in the middle, and arrows showing material passing from outside the cell to inside.\"><img src=\"../../../assets/img/c1-l4-2-gatekeeper.svg\" width=\"240\" height=\"280\" alt=\"Card labeled Gatekeeper: a person standing at an open gate in a fence, with an arrow showing something approaching the gate.\"></div></figure>",
       context: "<p>Someone describes a cell membrane as a ‘gatekeeper’ because it helps control what enters and leaves the cell.</p>",
       steps: [{
         type: "fill",

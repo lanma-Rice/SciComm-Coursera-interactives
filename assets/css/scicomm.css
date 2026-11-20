@@ -482,3 +482,5 @@ body {
   .sc-activity { padding: 1rem; }
   .sc-hero { padding: 1rem 1.1rem; }
 }
+.sc-cards { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.sc-cards img { width: 200px; max-width: 45%; height: auto; border-radius: 0; }
