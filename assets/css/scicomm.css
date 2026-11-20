@@ -484,3 +484,12 @@ body {
 }
 .sc-cards { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 .sc-cards img { width: 200px; max-width: 45%; height: auto; border-radius: 0; }
+
+/* two-position dial (4.4) */
+.sc-dial-row { display: flex; gap: 1rem; align-items: center; justify-content: space-between; }
+.sc-dial-row .sc-item-text { flex: 1 1 auto; }
+.sc-dial { flex: 0 0 160px; }
+.sc-dial svg { width: 160px; height: auto; display: block; font-family: Inter, Arial, sans-serif; }
+.sc-dial-needle { transform-box: view-box; transform-origin: 100px 100px; transition: transform .6s ease; }
+@media (prefers-reduced-motion: reduce) { .sc-dial-needle { transition: none; } }
+@media (max-width: 520px) { .sc-dial-row { flex-direction: column; align-items: stretch; } .sc-dial { align-self: center; } }

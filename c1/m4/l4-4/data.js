@@ -1,6 +1,7 @@
 /* Course 1 · Module 4 · Lecture 4.4: Use Humor
    Source: Course I Ungraded Assessments doc.
-   Per the doc: "serious" is not styled as a wrong or unsuccessful choice. */
+   Per the doc: "serious" is not styled as a wrong or unsuccessful choice.
+   Activity 2 dial: two neutral blue positions, no faces or red/green; decorative (aria-hidden). */
 window.LECTURE = {
   id: "c1/m4/l4-4",
   activities: [
@@ -30,6 +31,7 @@ window.LECTURE = {
         type: "label",
         shuffle: false,
         labels: ["Light humor may fit", "Keep the focus serious"],
+        dial: { left: "Keep the focus serious", right: "Light humor may fit", leftText: "Serious", rightText: "Light humor" },
         items: [
           { text: "At a relaxed community stargazing night, visitors are chatting and laughing. You consider a brief joke about your own struggle to set up the telescope before explaining what they’ll see.",
             answer: "Light humor may fit",

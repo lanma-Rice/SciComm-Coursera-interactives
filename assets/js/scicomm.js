@@ -291,12 +291,44 @@
           ctx.announce("Not quite. " + (msg || "Try again."));
         }
       }
-      list.appendChild(el("li", { class: "sc-item" }, [
+      var dial = cfg.dial ? makeDial(cfg.dial) : null;
+      if (dial) {
+        var origChoose = choose;
+        choose = function (btn, label) { origChoose(btn, label); dial.point(label); };
+      }
+      var row = dial ? el("div", { class: "sc-dial-row" }, [
         el("p", { class: "sc-item-text", id: textId, html: item.html || null, text: item.html ? null : item.text }),
-        group, fb
-      ]));
+        dial.node
+      ]) : el("p", { class: "sc-item-text", id: textId, html: item.html || null, text: item.html ? null : item.text });
+      list.appendChild(el("li", { class: "sc-item" }, [row, group, fb]));
     });
     return list;
+  }
+
+  // Decorative two-position dial (aria-hidden): the needle moves after the learner chooses.
+  // cfg.dial = { left: "<label>", right: "<label>", leftText: "...", rightText: "..." }
+  function makeDial(d) {
+    var NS = "http://www.w3.org/2000/svg";
+    var wrap = document.createElement("div");
+    wrap.className = "sc-dial";
+    wrap.setAttribute("aria-hidden", "true");
+    wrap.innerHTML =
+      '<svg viewBox="0 0 200 128" width="200" height="128" xmlns="' + NS + '">' +
+      '<path d="M20 100 A80 80 0 0 1 100 20" fill="none" stroke="#196787" stroke-width="22"/>' +
+      '<path d="M100 20 A80 80 0 0 1 180 100" fill="none" stroke="#86bbdb" stroke-width="22"/>' +
+      '<line x1="100" y1="9" x2="100" y2="31" stroke="#fff" stroke-width="3"/>' +
+      '<g class="sc-dial-needle"><line x1="100" y1="100" x2="100" y2="34" stroke="#171e27" stroke-width="5" stroke-linecap="round"/></g>' +
+      '<circle cx="100" cy="100" r="9" fill="#171e27"/>' +
+      '<text x="38" y="124" text-anchor="middle" font-size="13" font-weight="600" fill="#171e27">' + (d.leftText || "") + '</text>' +
+      '<text x="162" y="124" text-anchor="middle" font-size="13" font-weight="600" fill="#171e27">' + (d.rightText || "") + '</text>' +
+      '</svg>';
+    var needle = wrap.querySelector(".sc-dial-needle");
+    function set(deg) { needle.setAttribute("transform", "rotate(" + deg + " 100 100)"); needle.style.transform = "rotate(" + deg + "deg)"; }
+    set(0);
+    return {
+      node: wrap,
+      point: function (label) { if (label === d.left) set(-55); else if (label === d.right) set(55); }
+    };
   }
 
   // ---------- CHOICE (single answer) ----------
