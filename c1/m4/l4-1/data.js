@@ -12,7 +12,7 @@ window.LECTURE = {
       steps: [{
         type: "match",
         selectLabel: "Factor",
-        options: ["Audience", "Goal", "Strengths"],
+        options: ["Audience", "Goal", "Strengths", "Budget", "Topic"],
         items: [
           { text: "“Who are you trying to reach?”", answer: "Audience",
             feedback: "Yes! Consider whom you want to reach and where they get information.",
