@@ -3,8 +3,9 @@
    Lecture pages and the landing page read their titles from here.
 
    Folder for each lecture:  c{course}/m{module}/l{module}-{lecture}/
-   status: "ready"  = practice page built
-           "todo"   = placeholder page ("coming soon")
+   status: "ready"    = practice page built
+           "coursera" = practice is a native Coursera quiz (no GitHub page needed)
+           "todo"     = placeholder page ("coming soon")
            "none"   = no practice planned (no folder)
    video:  video ID from FSC_Solomon_VideoTracker (for cross-reference)
 
@@ -20,35 +21,35 @@ window.CATALOG =
       "title": "Principles of Science Communication",
       "modules": [
         { "id": "m1", "number": 1, "title": "What Is Science Communication?", "lectures": [
-          { "id": "l1-1", "number": "1.1", "video": "A01", "status": "todo", "title": "Why Communicate Science?" },
+          { "id": "l1-1", "number": "1.1", "video": "A01", "status": "coursera", "title": "Why Communicate Science?" },
           { "id": "l1-2", "number": "1.2", "video": "A02", "status": "ready", "title": "Who Communicates Science?" },
-          { "id": "l1-3", "number": "1.3", "video": "A03", "status": "todo", "title": "Theories of Science Communication" }
+          { "id": "l1-3", "number": "1.3", "video": "A03", "status": "ready", "title": "Theories of Science Communication" }
         ]},
         { "id": "m2", "number": 2, "title": "Challenges of Science Communication", "lectures": [
-          { "id": "l2-1", "number": "2.1", "video": "B01", "status": "todo", "title": "Lack of Training and Support" },
-          { "id": "l2-2", "number": "2.2", "video": "B02", "status": "todo", "title": "Expert Blind Spot" },
-          { "id": "l2-3", "number": "2.3", "video": "B03", "status": "todo", "title": "Describing Uncertainty" },
-          { "id": "l2-4", "number": "2.4", "video": "B04", "status": "todo", "title": "Crowded Spaces" },
-          { "id": "l2-5", "number": "2.5", "video": "B05", "status": "todo", "title": "Confronting Skepticism and Misinformation" },
-          { "id": "l2-6", "number": "2.6", "video": "B06", "status": "todo", "title": "Being a Good Listener" },
-          { "id": "l2-7", "number": "2.7", "video": "B07", "status": "todo", "title": "Measuring Impact" }
+          { "id": "l2-1", "number": "2.1", "video": "B01", "status": "ready", "title": "Lack of Training and Support" },
+          { "id": "l2-2", "number": "2.2", "video": "B02", "status": "ready", "title": "Expert Blind Spot" },
+          { "id": "l2-3", "number": "2.3", "video": "B03", "status": "ready", "title": "Describing Uncertainty" },
+          { "id": "l2-4", "number": "2.4", "video": "B04", "status": "ready", "title": "Crowded Spaces" },
+          { "id": "l2-5", "number": "2.5", "video": "B05", "status": "coursera", "title": "Confronting Skepticism and Misinformation" },
+          { "id": "l2-6", "number": "2.6", "video": "B06", "status": "ready", "title": "Being a Good Listener" },
+          { "id": "l2-7", "number": "2.7", "video": "B07", "status": "ready", "title": "Measuring Impact" }
         ]},
         { "id": "m3", "number": 3, "title": "Principles of Science Communication, Part I", "lectures": [
-          { "id": "l3-1", "number": "3.1", "video": "C01", "status": "todo", "title": "Establish Your Goals" },
-          { "id": "l3-2", "number": "3.2", "video": "C02", "status": "todo", "title": "Know Your Audience" },
-          { "id": "l3-3", "number": "3.3", "video": "C03", "status": "todo", "title": "Develop Trust" },
-          { "id": "l3-4", "number": "3.4", "video": "C04", "status": "todo", "title": "Use Plain Language" },
-          { "id": "l3-5", "number": "3.5", "video": "C05", "status": "todo", "title": "Tell Stories" }
+          { "id": "l3-1", "number": "3.1", "video": "C01", "status": "ready", "title": "Establish Your Goals" },
+          { "id": "l3-2", "number": "3.2", "video": "C02", "status": "ready", "title": "Know Your Audience" },
+          { "id": "l3-3", "number": "3.3", "video": "C03", "status": "ready", "title": "Develop Trust" },
+          { "id": "l3-4", "number": "3.4", "video": "C04", "status": "ready", "title": "Use Plain Language" },
+          { "id": "l3-5", "number": "3.5", "video": "C05", "status": "ready", "title": "Tell Stories" }
         ]},
         { "id": "m4", "number": 4, "title": "Principles of Science Communication, Part II", "lectures": [
-          { "id": "l4-1", "number": "4.1", "video": "D01", "status": "todo", "title": "Choose Your Media Strategically" },
-          { "id": "l4-2", "number": "4.2", "video": "D02", "status": "todo", "title": "Use Metaphors" },
-          { "id": "l4-3", "number": "4.3", "video": "D03", "status": "todo", "title": "Be Authentic and Find Your Voice" },
-          { "id": "l4-4", "number": "4.4", "video": "D04", "status": "todo", "title": "Use Humor" },
-          { "id": "l4-5", "number": "4.5", "video": "D05", "status": "todo", "title": "Have Fun" }
+          { "id": "l4-1", "number": "4.1", "video": "D01", "status": "ready", "title": "Use Media Strategically" },
+          { "id": "l4-2", "number": "4.2", "video": "D02", "status": "ready", "title": "Use Metaphors" },
+          { "id": "l4-3", "number": "4.3", "video": "D03", "status": "ready", "title": "Be Authentic & Find Your Voice" },
+          { "id": "l4-4", "number": "4.4", "video": "D04", "status": "ready", "title": "Use Humor" },
+          { "id": "l4-5", "number": "4.5", "video": "D05", "status": "coursera", "title": "Have Fun" }
         ]},
         { "id": "m5", "number": 5, "title": "Science Communication Considerations", "lectures": [
-          { "id": "l5-1", "number": "5.1", "video": "E01", "status": "todo", "title": "AI and Science Communication" },
+          { "id": "l5-1", "number": "5.1", "video": "E01", "status": "ready", "title": "AI and Science Communication" },
           { "id": "l5-2", "number": "5.2", "video": "E02", "status": "ready", "title": "Being a Science Communicator" }
         ]}
       ]

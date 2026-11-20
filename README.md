@@ -21,7 +21,7 @@ c3/  Course 3: Fundamentals of Oral and Visual SciComm    4 modules, 19 lectures
 .nojekyll                     Stops GitHub Pages from processing the files
 ```
 
-Every lecture folder already exists. A lecture with no activities yet shows a "Coming soon" page, so you can set up its Coursera item now and it fills in when the content goes live.
+Every lecture folder already exists. A lecture with no activities yet shows a "Coming soon" page (or, with catalog status `"coursera"`, a note that its practice is a native Coursera quiz), so you can set up its Coursera item now and it fills in when the content goes live.
 
 Lecture URL pattern: `https://<org>.github.io/<repo>/c{course}/m{module}/l{module}-{lecture}/`
 e.g. Course 1, Lecture 2.4 → `.../c1/m2/l2-4/`
@@ -38,27 +38,25 @@ e.g. Course 1, Lecture 2.4 → `.../c1/m2/l2-4/`
 
 Every lecture page with activities has a **"Prefer reading? Open the text version"** link (`?view=text`). It shows the same content as a numbered reading list, with each answer and its feedback behind **Show answer**. It's generated from `data.js`, so it never needs separate editing, and it also prints cleanly.
 
-## Activity types (`type` in data.js)
+## Activities and steps
 
-| type    | What learners do |
-|---------|------------------|
-| `sort`  | Drag cards into categories, or select a card and then a category. Keyboard: Tab, Enter/Space, Esc. Touch: tap a card, then tap a category. |
-| `label` | Pick one label per item, with per-item feedback and retry. |
+Each lecture's `data.js` lists `activities`. An activity has a `title`, optional `meta`, `instructions`, `context` (a shaded box), `figure` (an image), `layout: "side"` (context and steps side by side on wide screens), `completion` (the key-takeaway box), and a list of `steps`.
 
-More types (dropdown fill-in, click-to-highlight, click-to-revise, scenario multiple choice, matching, number entry) will be added as later lectures need them.
+| step `type` | What learners do |
+|-------------|------------------|
+| `sort`      | Drag cards into categories, or select a card then a category (keyboard and touch supported) |
+| `label`     | Pick one label per item |
+| `choice`    | Single-answer choice, per-option feedback, retry until correct |
+| `match`     | Pick from a dropdown for each item (shared options, or per-item `options`) |
+| `fill`      | Sentence with inline dropdown blanks |
+| `highlight` | Click phrases in a passage to find the right ones |
+| `revise`    | Click a highlighted phrase and choose a replacement |
+| `multi`     | Select all that apply, then check |
+| `number`    | Type a number, then check (optional dot-grid `grid`) |
 
-### `sort` fields
-- `categories`: `[{ id, label, hint? }]`
-- `cards`: `[{ text, category, feedback }]`. Cards are shuffled on every load.
-- `wrongFeedback`: `{ categoryId: "hint" }`, keyed by the card's **correct** category
-- `completion`: message shown when every card is sorted
+Any step can have `heading`, `instructions`, `context`, `prompt`, `figure`, and a `reveal` shown once it's solved. The lecture files in `c1/` are working examples of every type. An activity written with a top-level `type` (as in 1.2 and 5.2) is treated as a single step.
 
-### `label` fields
-- `labels`: `["Label A", "Label B"]`
-- `items`: `[{ text, answer, feedback, retry? }]`
-- `retryFeedback`: default retry message
-- `shuffle`: `false` keeps item order
-- `completion` (optional)
+Images live in `assets/img/`. Give every image alt text, and never put an answer in the image.
 
 ## Publishing
 
